@@ -25,6 +25,7 @@ namespace Language_Engine_CLI.Settings
                 case distributionModes.Parabolic:
                     return getParabolic(s);
                 case distributionModes.Custom:
+                    //most likely will be implemented on CLI
                     throw new NotImplementedException();
                 default:
                     return getEquiprobable(s);
