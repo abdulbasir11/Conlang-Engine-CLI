@@ -41,25 +41,6 @@ namespace Language_Engine_CLI
             return (input - min) / (max - min);
         }
 
-        //More specifically, undoes minmax scaling for fractional values
-
-        //again, this only "undoes" values that are between 0 and 1.
-        //giving this a number outside of that range will yield garbage.
-        //see utils.rescale is that is what you want to do
-        public static double inverseNormalize(double input, double min, double max)
-        {
-            return ((max - min) * input) + min;
-        }
-
-        //for non-fractional values that you want to normalize, this changes the range while maintaining the ratio.
-        //it is not necessary for fractional values because they are inherently between 0 and 1. see utils.inverseNormalize
-        public static double rescale(double input, (double oldMin, double oldMax) oldRange, (double newMin, double newMax) newRange)
-        {
-            return (((input - oldRange.oldMin) * (newRange.newMax - newRange.newMin)) / (oldRange.oldMax - oldRange.oldMin)) + newRange.newMin;
-        }
-
-
-
         //Given an upper bound and an array of weights for each probability, selects a biased random number within the range
         public static int generateInverseDistro(int factorsUpperBound, double[] orderedWeights)
         {
