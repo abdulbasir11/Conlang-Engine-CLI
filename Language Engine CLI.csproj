@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8214E6F4-66C2-4F47-8CF6-8497CF3C136E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Language_Engine_CLI</RootNamespace>
+    <AssemblyName>Language Engine CLI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstractions\Container.cs" />
+    <Compile Include="Abstractions\Word.cs" />
+    <Compile Include="Containers\ConjugateContainer.cs" />
+    <Compile Include="Containers\TestContainer.cs" />
+    <Compile Include="Drivers\Driver.cs" />
+    <Compile Include="Elements\Conjugate.cs" />
+    <Compile Include="Elements\Morpheme.cs" />
+    <Compile Include="Containers\LetterContainer.cs" />
+    <Compile Include="Elements\Letter.cs" />
+    <Compile Include="Elements\GeneratedWord.cs" />
+    <Compile Include="Elements\Syllable.cs" />
+    <Compile Include="Generators\LetterGenerator.cs" />
+    <Compile Include="Generators\SyllableGenerator.cs" />
+    <Compile Include="Generators\WordGenerator.cs" />
+    <Compile Include="Settings\Dictionaries.cs" />
+    <Compile Include="Settings\Distributions.cs" />
+    <Compile Include="utils.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
